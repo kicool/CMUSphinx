@@ -161,27 +161,20 @@ public class RecognizerTask implements Runnable {
 
 	public RecognizerTask() {
 		pocketsphinx
-				.setLogfile("/sdcard/Android/data/edu.cmu.pocketsphinx/pocketsphinx.log");
+				.setLogfile("/sdcard/edu.cmu.pocketsphinx/pocketsphinx.log");
 		Config c = new Config();
 		/*
 		 * In 2.2 and above we can use getExternalFilesDir() or whatever it's
 		 * called
 		 */
 		c.setString("-hmm",
-				"/sdcard/Android/data/edu.cmu.pocketsphinx/hmm/en_US/hub4wsj_sc_8k");
+				"/sdcard/edu.cmu.pocketsphinx/hmm/en_US/hub4wsj_sc_8k");
 		c.setString("-dict",
-				"/sdcard/Android/data/edu.cmu.pocketsphinx/lm/en_US/hub4.5000.dic");
+				"/sdcard/edu.cmu.pocketsphinx/lm/en_US/hub4.5000.dic");
 		c.setString("-lm",
-				"/sdcard/Android/data/edu.cmu.pocketsphinx/lm/en_US/hub4.5000.DMP");
-		/*
-		c.setString("-hmm",
-		"/sdcard/Android/data/edu.cmu.pocketsphinx/hmm/zh/tdt_sc_8k");
-		c.setString("-dict",
-		"/sdcard/Android/data/edu.cmu.pocketsphinx/lm/zh_TW/mandarin_notone.dic");
-		c.setString("-lm",
-		"/sdcard/Android/data/edu.cmu.pocketsphinx/lm/zh_TW/gigatdt.5000.DMP");
-		*/
-		c.setString("-rawlogdir", "/sdcard/Android/data/edu.cmu.pocketsphinx");
+				"/sdcard/edu.cmu.pocketsphinx/lm/en_US/hub4.5000.DMP");
+
+		c.setString("-rawlogdir", "/sdcard/edu.cmu.pocketsphinx");
 		c.setFloat("-samprate", 8000.0);
 		c.setInt("-maxhmmpf", 10000);
 		c.setBoolean("-backtrace", true);
