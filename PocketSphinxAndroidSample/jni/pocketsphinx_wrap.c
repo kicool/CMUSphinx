@@ -872,6 +872,9 @@ SWIGINTERN Decoder *new_Decoder__SWIG_1(Config *c){
 SWIGINTERN Config *Decoder_getConfig(Decoder *self){
 		return cmd_ln_retain(ps_get_config(self));
 	}
+SWIGINTERN int Decoder_setConfig(Decoder *self,Config *c){
+		return ps_reinit(self, c);
+	}
 SWIGINTERN int Decoder_startUtt__SWIG_0(Decoder *self){
 		return ps_start_utt(self, NULL);
 	}
@@ -1459,6 +1462,24 @@ SWIGEXPORT jlong JNICALL Java_edu_cmu_pocketsphinx_pocketsphinxJNI_Decoder_1getC
   arg1 = *(Decoder **)&jarg1; 
   result = (Config *)Decoder_getConfig(arg1);
   *(Config **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jint JNICALL Java_edu_cmu_pocketsphinx_pocketsphinxJNI_Decoder_1setConfig(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+  jint jresult = 0 ;
+  Decoder *arg1 = (Decoder *) 0 ;
+  Config *arg2 = (Config *) 0 ;
+  int result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  arg1 = *(Decoder **)&jarg1; 
+  arg2 = *(Config **)&jarg2; 
+  result = (int)Decoder_setConfig(arg1,arg2);
+  jresult = (jint)result; 
   return jresult;
 }
 

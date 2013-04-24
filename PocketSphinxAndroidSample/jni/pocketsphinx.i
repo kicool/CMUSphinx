@@ -170,6 +170,9 @@ typedef struct ps_decoder_s {
 	Config *getConfig() {
 		return cmd_ln_retain(ps_get_config($self));
 	}
+	int setConfig(Config *c) {
+		return ps_reinit($self, c);
+	}
 	int startUtt() {
 		return ps_start_utt($self, NULL);
 	}
